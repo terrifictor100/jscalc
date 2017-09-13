@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+    <link type="text/css" rel="stylesheet" href="calc_style.css"/>
+    <style>
+@import url('https://fonts.googleapis.com/css?family=Lato');
+</style>
+
+<title>JavaScript Calculator</title>
+</head>
+
+<body>
+<div id = "container">
+	<div id="calculator">
+		<div id = total></div>
+
+		<table class="calcButtons" cellspacing="0" cellpadding="0">
+			<tbody>
+				<tr>
+					<td class="allClear">AC</td>
+			        <td class="back">&#8592;</td>
+			        <td class="wide"></td>
+			        <td class="operator"></td>
+		      	</tr>
+			    <tr>
+			        <td class="number">7</td>
+			        <td class="number">8</td>
+			        <td class="number">9</td>
+			        <td class="operator divide">&divide;</td>
+			    </tr>
+			    <tr>
+			        <td class="number">4</td>
+			        <td class="number">5</td>
+			        <td class="number">6</td>
+			        <td class="operator times">&times;</td>
+			    </tr>
+			    <tr>
+			        <td class="number">1</td>
+			        <td class="number">2</td>
+			        <td class="number">3</td>
+			        <td class="operator minus">-</td>
+			    </tr>
+			     <tr>
+			        <td class="number">0</td>
+			        <td>.</td>
+			        <td id="equals" class="equals">=</td>
+			        <td class="operator add">&#43;</td>
+			     </tr>
+			</tbody>
+		</table>
+
+	</div>
+</div>
+
+
+</body>
+<script  type='text/javascript' src='calcjs.js'></script>
+</html>
