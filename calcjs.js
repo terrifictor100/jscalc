@@ -9,7 +9,8 @@
 		operator: '.operator',
 		equals: '.equals',
 		total: '#total',
-		allclear: '.allClear'
+		allclear: '.allClear',
+		back: '.back'
 	};
 
 	var clearAll = function() {
@@ -38,21 +39,30 @@
 			sum += totalDisplay + op;
 			console.log(sum);
 			clearDisplay();
-
 		};
 
 	var equals = function() {
 			var finalNum = document.querySelector(DOMstrings.total).innerHTML;
 			sum += finalNum;
+			console.log(sum);
 			var answer = eval(sum);
 			totalDisplay = answer.toString();
-			document.querySelector(DOMstrings.total).innerHTML = totalDisplay;
-			return;
-
+			document.querySelector(DOMstrings.total).innerHTML = totalDisplay.slice(0, 16);
+			totalDisplay = '';
+			sum = '';
+			answer = '';
 		};
 
+	// var clearTotal = function() {
+	// 		var totalDisplay = '';
+	// 		var sum ='';
+	// 		document.querySelector(DOMstrings.total).innerHTML = totalDisplay;
+	// 	};
+
 	var back = function () {
-			
+		var str = totalDisplay.slice(0, -1);
+		totalDisplay = str;
+		document.querySelector(DOMstrings.total).innerHTML = totalDisplay;
 	};
 
 	var setupEventListeners = function() {
@@ -69,11 +79,13 @@
 			}  // click equals
 			else if (table.className === "equals") {
 				equals();
+				return;
 			} // click operator
 			else if (table.classList.contains("operator")) {
 				var operator = '';
 				if(table.className === "operator divide") {
 					operator = '/';
+					addNum(operator);
 				} else if (table.className === "operator times") {
 					operator = '*';
 					addNum(operator);
@@ -83,20 +95,12 @@
 				} else if (table.className === "operator add") {
 					operator = '+';
 					addNum(operator);
-				};	
+				}	
 			} 
 			else if (table.className === "back") {
 				back();
 			};
-
-
 		});
-
-		
-
-		
-		//click C
-
 	};
 
 setupEventListeners();
