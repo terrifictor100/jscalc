@@ -51,13 +51,6 @@
 
 		};
 
-	var clearTotal = function() {
-			var totalDisplay = '';
-			var sum ='';
-			document.querySelector(DOMstrings.total).innerHTML = totalDisplay;
-			return;
-		};
-
 	var back = function () {
 			
 	};
